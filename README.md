@@ -33,13 +33,6 @@
 
 ## 📷 Screenshots
 
+![grafik](https://github.com/user-attachments/assets/861a7a89-6b79-4b24-91e4-9e1262f66632)
 
 
----
-
-## 🚀 Spiel ausprobieren
-
-Die Exe-Datei ist zu groß für GitHub.  
-Du kannst das Spiel hier herunterladen:
-
-🔗 [Download auf Itch.io](https://dein-link.itch.io/stranded-beep)
