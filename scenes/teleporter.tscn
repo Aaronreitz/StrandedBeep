@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/teleporter.gd" id="1_tele"]
+[ext_resource type="AudioStream" uid="uid://cw1em0ohvcma0" path="res://assets/sounds/power_up.wav" id="2_power"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tele"]
+size = Vector2(20, 24)
+
+[sub_resource type="Gradient" id="Gradient_tele"]
+colors = PackedColorArray(0.372549, 0.952941, 1, 1, 0.372549, 0.952941, 1, 0)
+
+[node name="Teleporter" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_tele")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_tele")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(0, -6)
+emitting = false
+amount = 16
+lifetime = 1.2
+emission_shape = 3
+emission_rect_extents = Vector2(7, 1)
+direction = Vector2(0, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 35.0
+scale_amount_min = 1.0
+scale_amount_max = 2.0
+color_ramp = SubResource("Gradient_tele")
+
+[node name="ActivateSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_power")
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

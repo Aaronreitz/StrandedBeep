@@ -10,6 +10,7 @@ func _ready() -> void:
 	master_slider.value = _get_bus_volume("Master")
 	music_slider.value = _get_bus_volume("Music")
 	sfx_slider.value = _get_bus_volume("SFX")
+	master_slider.grab_focus()
 
 
 func _unhandled_input(event: InputEvent) -> void:
