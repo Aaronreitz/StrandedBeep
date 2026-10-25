@@ -1,0 +1,26 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Godot-specific temp/backup files
+*.tmp
+*.translation
+
+# Export output
+/builds/
+/export/
+*.exe
+*.pck
+*.zip
+
+# Mono/C# (falls später genutzt)
+.mono/
+data_*/
+mono_crash.*.json
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
