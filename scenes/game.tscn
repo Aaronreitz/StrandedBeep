@@ -1,5 +1,6 @@
 [gd_scene load_steps=20 format=4 uid="uid://udsjebqvet7n"]
 
+[ext_resource type="Script" uid="uid://65jldeth58st" path="res://scripts/game_manager.gd" id="1_dinhu"]
 [ext_resource type="Texture2D" uid="uid://car6ghi3j1nmh" path="res://assets/Sprites/Four Seasons Platformer Tileset [16x16][FREE] - RottingPixels/four-seasons-tileset.png" id="1_yqjtg"]
 [ext_resource type="FontFile" uid="uid://8frj8vvm203l" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://dbrfye34r4hpl" path="res://scenes/beep.tscn" id="2_lnu2h"]
@@ -10,7 +11,6 @@
 [ext_resource type="FontFile" uid="uid://dptp1gp6ehc3a" path="res://assets/fonts/PixelOperator8.ttf" id="7_u5sy4"]
 [ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="8_tele"]
 [ext_resource type="Script" uid="uid://dlst07db2e4xa" path="res://scripts/hud.gd" id="10_kvpfn"]
-[ext_resource type="Script" uid="uid://65jldeth58st" path="res://scripts/game_manager.gd" id="1_gee14"]
 [ext_resource type="Texture2D" uid="uid://bxo64h254bioo" path="res://assets/Sprites/coin.png" id="11_dinhu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_feb5d"]
@@ -242,7 +242,7 @@ region = Rect2(0, 0, 16, 16)
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("1_gee14")
+script = ExtResource("1_dinhu")
 
 [node name="ScoreLabel" type="Label" parent="GameManager"]
 offset_left = 331.0
