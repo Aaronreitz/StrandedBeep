@@ -4,10 +4,12 @@ var total_coins := 0
 var elapsed := 0.0
 var best_time := 0.0
 var is_record := false
+var next_level := ""
 
 @onready var root: Control = $Root
 @onready var stats_label: Label = %StatsLabel
 @onready var record_label: Label = %RecordLabel
+@onready var next_level_button: Button = %NextLevel
 @onready var play_again: Button = %PlayAgain
 
 
@@ -23,7 +25,17 @@ func _ready() -> void:
 		record_label.text = "Best: " + GameManager.format_time(best_time)
 	root.modulate.a = 0.0
 	create_tween().tween_property(root, "modulate:a", 1.0, 0.5)
-	play_again.grab_focus()
+
+	next_level_button.visible = next_level != ""
+	if next_level_button.visible:
+		next_level_button.grab_focus()
+	else:
+		play_again.grab_focus()
+
+
+func _on_next_level_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file(next_level)
 
 
 func _on_play_again_pressed() -> void:

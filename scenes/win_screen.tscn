@@ -107,6 +107,22 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 
+[node name="NextLevel" type="Button" parent="Root/Center/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.514325, 0.267788, 0.497472, 1)
+theme_override_colors/font_hover_color = Color(0.514325, 0.267788, 0.497472, 1)
+theme_override_colors/font_focus_color = Color(0.514325, 0.267788, 0.497472, 1)
+theme_override_colors/font_pressed_color = Color(0.514325, 0.267788, 0.497472, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_button")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_button_focus")
+text = "Next Level"
+
 [node name="PlayAgain" type="Button" parent="Root/Center/VBox"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(320, 0)
@@ -138,5 +154,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_button_hover")
 theme_override_styles/focus = SubResource("StyleBoxFlat_button_focus")
 text = "Main Menu"
 
+[connection signal="pressed" from="Root/Center/VBox/NextLevel" to="." method="_on_next_level_pressed"]
 [connection signal="pressed" from="Root/Center/VBox/PlayAgain" to="." method="_on_play_again_pressed"]
 [connection signal="pressed" from="Root/Center/VBox/MainMenu" to="." method="_on_main_menu_pressed"]

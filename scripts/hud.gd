@@ -7,7 +7,7 @@ extends CanvasLayer
 
 
 func _ready() -> void:
-	var best_time = GameManager.load_best_time()
+	var best_time = GameManager.load_best_time(game_manager.level_id)
 	best_label.text = "BEST " + GameManager.format_time(best_time) if best_time > 0.0 else ""
 
 

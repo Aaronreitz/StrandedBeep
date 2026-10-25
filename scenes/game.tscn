@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://udsjebqvet7n"]
+[gd_scene load_steps=21 format=4 uid="uid://udsjebqvet7n"]
 
 [ext_resource type="Script" uid="uid://65jldeth58st" path="res://scripts/game_manager.gd" id="1_dinhu"]
 [ext_resource type="Texture2D" uid="uid://car6ghi3j1nmh" path="res://assets/Sprites/Four Seasons Platformer Tileset [16x16][FREE] - RottingPixels/four-seasons-tileset.png" id="1_yqjtg"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="8_tele"]
 [ext_resource type="Script" uid="uid://dlst07db2e4xa" path="res://scripts/hud.gd" id="10_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://bxo64h254bioo" path="res://assets/Sprites/coin.png" id="11_dinhu"]
+[ext_resource type="PackedScene" path="res://scenes/pause_menu.tscn" id="13_kvuet"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_feb5d"]
 texture = ExtResource("1_yqjtg")
@@ -459,3 +460,5 @@ theme_override_fonts/font = ExtResource("2_0tnpc")
 theme_override_font_sizes/font_size = 16
 text = "BEST 00:00.0"
 horizontal_alignment = 2
+
+[node name="PauseMenu" parent="." instance=ExtResource("13_kvuet")]
