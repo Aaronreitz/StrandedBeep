@@ -92,6 +92,17 @@ theme_override_font_sizes/font_size = 24
 text = "8 / 8 coins  -  0.0 s"
 horizontal_alignment = 1
 
+[node name="RecordLabel" type="Label" parent="Root/Center/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.87, 0.35, 1)
+theme_override_colors/font_outline_color = Color(0.168627, 0.0784314, 0.192157, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_bold")
+theme_override_font_sizes/font_size = 32
+text = "NEW RECORD!"
+horizontal_alignment = 1
+
 [node name="Spacer" type="Control" parent="Root/Center/VBox"]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2

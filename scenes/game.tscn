@@ -1,6 +1,5 @@
-[gd_scene load_steps=17 format=4 uid="uid://udsjebqvet7n"]
+[gd_scene load_steps=20 format=4 uid="uid://udsjebqvet7n"]
 
-[ext_resource type="Script" uid="uid://65jldeth58st" path="res://scripts/game_manager.gd" id="1_gee14"]
 [ext_resource type="Texture2D" uid="uid://car6ghi3j1nmh" path="res://assets/Sprites/Four Seasons Platformer Tileset [16x16][FREE] - RottingPixels/four-seasons-tileset.png" id="1_yqjtg"]
 [ext_resource type="FontFile" uid="uid://8frj8vvm203l" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://dbrfye34r4hpl" path="res://scenes/beep.tscn" id="2_lnu2h"]
@@ -10,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://dljmld02mlwbm" path="res://scenes/green_slime.tscn" id="6_p57ef"]
 [ext_resource type="FontFile" uid="uid://dptp1gp6ehc3a" path="res://assets/fonts/PixelOperator8.ttf" id="7_u5sy4"]
 [ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="8_tele"]
+[ext_resource type="Script" uid="uid://dlst07db2e4xa" path="res://scripts/hud.gd" id="10_kvpfn"]
+[ext_resource type="Script" uid="uid://65jldeth58st" path="res://scripts/game_manager.gd" id="1_gee14"]
+[ext_resource type="Texture2D" uid="uid://bxo64h254bioo" path="res://assets/Sprites/coin.png" id="11_dinhu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_feb5d"]
 texture = ExtResource("1_yqjtg")
@@ -232,6 +234,10 @@ _data = {
 &"move": SubResource("Animation_lnu2h")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvuet"]
+atlas = ExtResource("11_dinhu")
+region = Rect2(0, 0, 16, 16)
+
 [node name="Game" type="Node2D"]
 
 [node name="GameManager" type="Node" parent="."]
@@ -393,3 +399,63 @@ theme_override_font_sizes/font_size = 16
 text = "Press A and D 
 for left and right"
 horizontal_alignment = 1
+
+[node name="HUD" type="CanvasLayer" parent="."]
+layer = 5
+script = ExtResource("10_kvpfn")
+
+[node name="Coins" type="HBoxContainer" parent="HUD"]
+offset_left = 24.0
+offset_top = 20.0
+offset_right = 24.0
+offset_bottom = 20.0
+theme_override_constants/separation = 12
+
+[node name="CoinIcon" type="TextureRect" parent="HUD/Coins"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = SubResource("AtlasTexture_kvuet")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CoinLabel" type="Label" parent="HUD/Coins"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.87, 0.35, 1)
+theme_override_colors/font_outline_color = Color(0.168627, 0.0784314, 0.192157, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_0tnpc")
+theme_override_font_sizes/font_size = 32
+text = "0 / 8"
+
+[node name="Timer" type="VBoxContainer" parent="HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -324.0
+offset_top = 20.0
+offset_right = -24.0
+offset_bottom = 90.0
+grow_horizontal = 0
+
+[node name="TimeLabel" type="Label" parent="HUD/Timer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.95, 1, 1)
+theme_override_colors/font_outline_color = Color(0.168627, 0.0784314, 0.192157, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_0tnpc")
+theme_override_font_sizes/font_size = 32
+text = "00:00.0"
+horizontal_alignment = 2
+
+[node name="BestLabel" type="Label" parent="HUD/Timer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.372549, 0.952941, 1, 1)
+theme_override_colors/font_outline_color = Color(0.168627, 0.0784314, 0.192157, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_0tnpc")
+theme_override_font_sizes/font_size = 16
+text = "BEST 00:00.0"
+horizontal_alignment = 2

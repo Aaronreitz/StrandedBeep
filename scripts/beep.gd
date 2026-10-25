@@ -57,6 +57,18 @@ func die() -> void:
 	# Small hop, then fall through the level.
 	velocity = Vector2(0, JUMP_VELOCITY * 0.5)
 	$CollisionShape2D.queue_free()
+	_shake_camera()
+
+
+func _shake_camera() -> void:
+	# The camera lives in the level scene, so it may be missing.
+	var camera := get_node_or_null("Camera2D") as Camera2D
+	if camera == null:
+		return
+	var tween := create_tween()
+	for i in 6:
+		tween.tween_property(camera, "offset", Vector2(randf_range(-4, 4), randf_range(-4, 4)), 0.04)
+	tween.tween_property(camera, "offset", Vector2.ZERO, 0.04)
 
 
 func teleport_out(target_x: float) -> void:
