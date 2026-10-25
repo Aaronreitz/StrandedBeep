@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://dbrfye34r4hpl"]
+[gd_scene load_steps=79 format=3 uid="uid://dbrfye34r4hpl"]
 
 [ext_resource type="Script" uid="uid://cc3yu85by5uwd" path="res://scripts/beep.gd" id="1_8d113"]
 [ext_resource type="Texture2D" uid="uid://ch6l3tsiv2fxo" path="res://assets/Sprites/Beep/Side_left_idle_sprite_sheet.png" id="2_hf73n"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b7wm8utmpgqwo" path="res://assets/Sprites/Beep/Side_left_jump.png" id="3_k8py2"]
 [ext_resource type="Texture2D" uid="uid://bhns2wpmfs2x6" path="res://assets/Sprites/Beep/Side_left_move_sprite_sheet.png" id="4_s8jvn"]
 [ext_resource type="Texture2D" uid="uid://cc7d66ijs16dm" path="res://assets/Sprites/Beep/Front_idle_sprite_sheet.png" id="6_lx3wx"]
+[ext_resource type="AudioStream" uid="uid://dokxw4rqw6fo2" path="res://assets/sounds/hurt.wav" id="7_hurt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_trs5l"]
 atlas = ExtResource("2_s8jvn")
@@ -536,3 +537,7 @@ frame_progress = 0.546489
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -9)
 shape = SubResource("CircleShape2D_nonn5")
+
+[node name="HurtSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_hurt")
+bus = &"SFX"

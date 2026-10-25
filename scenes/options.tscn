@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2f7vjnoc41ib"]
+[gd_scene load_steps=4 format=3 uid="uid://b2f7vjnoc41ib"]
 
 [ext_resource type="Script" uid="uid://dxv6wgsrg1wsr" path="res://options.gd" id="1_c2u1v"]
+[ext_resource type="FontFile" uid="uid://dptp1gp6ehc3a" path="res://assets/fonts/PixelOperator8.ttf" id="2_font"]
 
 [sub_resource type="Theme" id="Theme_c2u1v"]
 
@@ -19,8 +20,10 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -28.0
-offset_bottom = 28.0
+offset_left = 200.0
+offset_top = -200.0
+offset_right = -200.0
+offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -28,17 +31,52 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_vertical = 0
 theme = SubResource("Theme_c2u1v")
-theme_override_constants/separation = 40
+theme_override_constants/separation = 16
+
+[node name="MasterLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 24
+text = "Master"
 
 [node name="Master" type="HSlider" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="MusicLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 24
+text = "Music"
 
 [node name="Music" type="HSlider" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="SFXLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 24
+text = "Effects"
 
 [node name="SFX" type="HSlider" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 30
+text = "Back"
 
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/Master" to="." method="_on_master_value_changed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/Music" to="." method="_on_music_value_changed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/SFX" to="." method="_on_sfx_value_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]

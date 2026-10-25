@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ds0sw3w1dco6i"]
+[gd_scene load_steps=7 format=3 uid="uid://ds0sw3w1dco6i"]
 
 [ext_resource type="Script" uid="uid://c1loodj1141xp" path="res://scripts/main_menu.gd" id="1_bqqt6"]
 [ext_resource type="FontFile" uid="uid://dptp1gp6ehc3a" path="res://assets/fonts/PixelOperator8.ttf" id="1_ekxnf"]
@@ -12,6 +12,31 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 shadow_color = Color(0, 0, 0, 0.352941)
 shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vue75_hover"]
+bg_color = Color(0.996, 0.85, 0.95, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.352941)
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vue75_focus"]
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.372549, 0.952941, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -50,24 +75,42 @@ theme_override_constants/separation = 9
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.514325, 0.267788, 0.497472, 1)
+theme_override_colors/font_hover_color = Color(0.514325, 0.267788, 0.497472, 1)
+theme_override_colors/font_focus_color = Color(0.514325, 0.267788, 0.497472, 1)
+theme_override_colors/font_pressed_color = Color(0.514325, 0.267788, 0.497472, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_vue75")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vue75_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vue75_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_vue75_focus")
 text = "Start Game"
 
 [node name="Button2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.514325, 0.267788, 0.497472, 1)
+theme_override_colors/font_hover_color = Color(0.514325, 0.267788, 0.497472, 1)
+theme_override_colors/font_focus_color = Color(0.514325, 0.267788, 0.497472, 1)
+theme_override_colors/font_pressed_color = Color(0.514325, 0.267788, 0.497472, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_vue75")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vue75_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vue75_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_vue75_focus")
 text = "Options"
 
 [node name="Button3" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.514325, 0.267788, 0.497472, 1)
+theme_override_colors/font_hover_color = Color(0.514325, 0.267788, 0.497472, 1)
+theme_override_colors/font_focus_color = Color(0.514325, 0.267788, 0.497472, 1)
+theme_override_colors/font_pressed_color = Color(0.514325, 0.267788, 0.497472, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_vue75")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vue75_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vue75_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_vue75_focus")
 text = "Exit"
 
 [node name="Stranded" type="Label" parent="."]

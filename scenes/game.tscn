@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://udsjebqvet7n"]
+[gd_scene load_steps=17 format=4 uid="uid://udsjebqvet7n"]
 
 [ext_resource type="Script" uid="uid://65jldeth58st" path="res://scripts/game_manager.gd" id="1_gee14"]
 [ext_resource type="Texture2D" uid="uid://car6ghi3j1nmh" path="res://assets/Sprites/Four Seasons Platformer Tileset [16x16][FREE] - RottingPixels/four-seasons-tileset.png" id="1_yqjtg"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b3002witpce8q" path="res://scenes/killzone.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://dljmld02mlwbm" path="res://scenes/green_slime.tscn" id="6_p57ef"]
 [ext_resource type="FontFile" uid="uid://dptp1gp6ehc3a" path="res://assets/fonts/PixelOperator8.ttf" id="7_u5sy4"]
+[ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="8_tele"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_feb5d"]
 texture = ExtResource("1_yqjtg")
@@ -277,6 +278,9 @@ position = Vector2(235, 237)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(1, -1)
 shape = SubResource("WorldBoundaryShape2D_p57ef")
+
+[node name="Teleporter" parent="." instance=ExtResource("8_tele")]
+position = Vector2(412, -1)
 
 [node name="Coins" type="Node" parent="."]
 
